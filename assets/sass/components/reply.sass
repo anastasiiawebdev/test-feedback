@@ -1,0 +1,181 @@
+.reply
+	margin-right: 10px
+	margin-bottom: 0
+	position: relative
+	transition-duration: .3s
+	transition-property: all
+	transition-timing-function: ease-in
+	&__photo
+		height: 40px
+		width: 40px
+	&__author
+		margin-right: 0
+		display: flex
+		&-name
+			margin-bottom: 5px
+	&__content
+		transform: translateX(-10px)
+		transform-origin: 0 center
+		opacity: 0
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		transition-duration: 0.3s
+		transition-timing-function: ease-in
+		transition-property: transform
+	&:last-child
+		margin-right: 0
+	&:not(:nth-child(-n+5))
+		display: none
+	&:not(:nth-child(-n+3))
+		@include r(480)
+			display: none
+	&:nth-child(5)
+		margin-right: 0
+		.photo__body
+			display: none
+		.user__presence
+			display: none
+		.reply__photo
+			background-color: $grey-matterhorn
+			&::before
+				content: '\eA04'
+				display: inline-block
+				vertical-align: middle
+				font-family: $iconFont
+				-webkit-font-smoothing: antialiased
+				font-smoothing: antialiased
+				-moz-osx-font-smoothing: grayscale
+				text-shadow: 0 0 0 rgba(255, 255, 255, 0)
+				speak: none
+				font-style: normal
+				font-weight: normal
+				font-variant: normal
+				text-transform: none
+				transform: scale(1)
+				transition: .3s
+	&-list
+		display: flex
+		align-items: center
+		position: relative
+		z-index: 2
+		background-color: transparent
+		transition: .3s
+		margin-bottom: 15px
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			z-index: 10
+		&:hover
+			&::before
+				cursor: pointer
+		&__item
+			margin-right: 15px
+			&_refactor
+				position: relative
+				bottom: 2px
+		&__refactor
+			text-align: right
+			position: absolute
+			z-index: 2
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+		&__body
+			display: flex
+			order: 2
+			align-items: center
+		&__timestamp
+			order: 4
+			display: flex
+			align-items: center
+			justify-content: space-around
+			@include r(992)
+				display: none
+		&:hover
+			background-color: #000
+			.timestamp
+				&__body
+					color: #000
+					&::before
+						opacity: .5
+					&::after
+						content: ''
+				&__arrow-right
+					opacity: .5
+			.reply-list-head__item_amount
+				text-shadow: 0.5px 0 $green
+			.reply:nth-child(5) .reply__photo::before
+				transform: scale(1.2)
+			.reply-list-head__item_arrow
+				transform: translateX(5px)
+		&.thread_opened
+			.feedback__author
+				margin: 0
+			.timestamp
+				display: none
+			.reply
+				display: flex
+				margin-right: 0
+				flex-basis: 100%
+				margin-bottom: 20px
+				&:last-child
+					margin-bottom: 0
+				&-list
+					&__icon-arrow
+						&:hover
+							color: $green
+							cursor: pointer
+					&__item
+						flex-basis: 100%
+						&_refactor
+							order: 4
+							margin-right: 0
+					&-head
+						&__item
+							flex-basis: 0
+							margin-bottom: 20px
+							&_amount
+								order: 2
+						&__line
+							&-wrap
+								display: block
+								order: 3
+					&__body
+						display: block
+						order: 5
+						margin-right: 0
+						flex-basis: 93%
+						@include r(480)
+							flex-basis: 100%
+				&__author
+					margin-right: 15px
+					display: block
+				&__content
+					transform: translateX(0)
+					opacity: 1
+					position: relative
+				&:nth-child(5)
+					.photo__body
+						display: block
+					.user__presence
+						display: block
+					.reply__photo
+						background-color: $grey-gainsboro
+						&::before
+							display: none
+			&.reply-list
+				flex-wrap: wrap
+				justify-content: flex-end
+				&::before
+					display: none
+				&:hover
+					background-color: transparent
+				.reply .reply__content
+					transition-delay: .1s

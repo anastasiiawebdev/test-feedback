@@ -1,0 +1,38 @@
+$grid-gutter: 20px
+
+.l-wrap
+	display: block
+	width: 100%
+	max-width: 1110px
+	margin: 0 auto
+	position: relative
+	padding-left: 10px
+	padding-right: 10px
+[class^="l-col-"],
+[class*=" l-col-"]
+	display: inline-block
+	position: relative
+	box-sizing: border-box
+	padding-left: ($grid-gutter / 2)
+	padding-right: ($grid-gutter / 2)
+	flex:
+		grow: 0
+		shrink: 0
+	max-width: 100%
+	width: 100%
+.l
+	&-row
+		display: flex
+		flex-wrap: wrap
+		margin-right: -10px
+		margin-left: -10px
+	&-col-xl-7
+		flex: 0 0 56%
+		max-width: 56%
+	&-col-xl-5
+		flex: 0 0 44%
+		max-width: 44%
+	&-col-xs-12
+		@include r(576)
+			flex: 0 0 100%
+			max-width: 100%

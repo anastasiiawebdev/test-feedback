@@ -1,0 +1,15 @@
+.rating
+	margin-left: 30px
+	&__item
+		display: inline-block
+		opacity: 0
+		transform: translateX(0)
+		transition-duration: 0.3s
+		transition-timing-function: ease-in
+		transition-property: all
+		transition-delay: 0.1s
+		&::before
+			vertical-align: unset
+		&_active
+			color: $green
+			opacity: 1

@@ -1,0 +1,20 @@
+.user
+	position: relative
+	display: inline-block
+	&__photo
+		background-color: $grey-gainsboro
+		height: 50px
+		width: 50px
+	&__presence
+		position: absolute
+		right: -1px
+		bottom: -1px
+		display: none
+		width: 10px
+		height: 10px
+		border: 3px solid #000
+		border-radius: 50%
+		background-color: $green
+		box-sizing: content-box
+		&_active
+			display: block

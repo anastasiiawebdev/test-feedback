@@ -1,0 +1,14 @@
+- var menuList = ["Store", "Followers", "Following", "Seller Feedback"]
+mixin menuItem(link)
+	li.menu__item
+		a.link.link-primary.menu__link= link
+
+input(class="menu-mobile-checkbox" id="menu_mobile_trigger" type="checkbox")
+label(class="burger" for="menu_mobile_trigger")
+
+header.header
+	.l-wrap
+		nav
+			ul.list.menu
+				for link in menuList
+					+menuItem(link)

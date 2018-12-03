@@ -1,0 +1,27 @@
+.reply-list-head
+	display: flex
+	align-items: center
+	margin-bottom: 20px
+	&__item
+		flex-grow: 0
+		&_arrow
+			order: 1
+			transform: translateX(0)
+			transition: .3s
+		&:last-child
+			margin-right: 0
+		&_amount
+			order: 3
+			color: $green
+			font-weight: 100
+			transition: .3s
+			@include r(480)
+				display: none
+	&__line
+		display: block
+		height: 1px
+		width: 100%
+		background-color: $grey-nobel
+		&-wrap
+			flex-grow: 1
+			display: none

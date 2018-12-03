@@ -1,0 +1,31 @@
+.link
+	cursor: pointer
+	text-decoration: none
+	color: inherit
+	display: inline-block
+	&-primary
+		position: relative
+		&::before
+			content: ''
+			height: 6px
+			width: 100%
+			background-color: #fff
+			position: absolute
+			bottom: -1px
+			left: 0
+			transform: scale(0)
+			transition: transform .3s
+		&:hover
+			&::before
+				transform: scale(1)
+	&-secondary
+		transition: .3s
+		&:hover
+			color: $green
+		&_important
+			&:hover
+				color: #85ff00
+				text-shadow: 0.5px 0 #85ff00
+	&:hover
+		&::after
+			color: #fff

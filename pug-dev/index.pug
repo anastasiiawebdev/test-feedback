@@ -1,0 +1,362 @@
+include modules/html-head.pug
+include modules/header.pug
+
+-
+	var commentList = [
+	{
+	name: "Alexandr",
+	posterImage: "assets/img/del/picture.png",
+	rating: 1,
+	comment: "1fskjfgklgjk dfjg kmjskfjsghfsg v " +
+	"kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg " +
+	"kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk" +
+	" dfjg kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg" +
+	" kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xv",
+	replies: false,
+	repliesAmount: 0,
+	timestamp: "2 days ago"
+	},
+	{
+	name: "Sergey",
+	posterImage: "assets/img/del/photo.jpg",
+	rating: 3,
+	comment: "2My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg" +
+	" kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	replies: false,
+	repliesAmount: 0,
+	timestamp: "56 min"
+	},
+	{
+	name: "Natasha",
+	posterImage: "assets/img/del/photo-2.jpg",
+	rating: 4,
+	comment: "3My commfgbcbgncdgbn lkj lj lkj lkj lkj lkjlk jent  ghdk snvkx  ljskjgfksvk " +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf" +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	replies: true,
+	repliesAmount: 3,
+	timestamp: "5 hrs"
+	},
+	{
+	name: "Jack",
+	posterImage: "assets/img/del/photo-3.jpg",
+	rating: 5,
+	comment: "4My comment",
+	replies: true,
+	repliesAmount: 6,
+	timestamp: "10 hrs"
+	},
+	{
+	name: "Mary",
+	posterImage: "assets/img/del/picture.png",
+	rating: 3,
+	comment:
+	"5fskjfgklgjk dfjg kmjskfjsghfsg v " +
+	"kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg " +
+	"kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk" +
+	" dfjg kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg" +
+	" kmjskfjsghfsg v kjskgjsdkghdk snvkx  ljskjgfksvk xv",
+	replies: true,
+	repliesAmount: 8,
+	timestamp: "20 hrs"
+	}
+	]
+
+-
+	var replyList = [
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "2Bob",
+	posterImage: "assets/img/del/photo.jpg",
+	comment:
+	"2My comment",
+	timestamp: "3 hrs"
+	},
+	{
+	name: "3Monica",
+	posterImage: "assets/img/del/photo-2.jpg",
+	comment:
+	"3My commfgbcbgncdgbn lkj lj lkj lkj lkj lkjlk jent  ghdk snvkx  ljskjgfksvk " +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "4Chandler",
+	posterImage: "assets/img/del/photo-3.jpg",
+	comment:
+	"4My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "12 hrs"
+	}
+	]
+
+-
+	var replyList2 = [
+	{
+	name: "2Bob",
+	posterImage: "assets/img/del/photo.jpg",
+	comment:
+	"2My comment",
+	timestamp: "3 hrs"
+	},
+	{
+	name: "3Monica",
+	posterImage: "assets/img/del/photo-2.jpg",
+	comment:
+	"3My commfgbcbgncdgbn lkj lj lkj lkj lkj lkjlk jent  ghdk snvkx  ljskjgfksvk " +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "4Chandler",
+	posterImage: "assets/img/del/photo-3.jpg",
+	comment:
+	"4My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "12 hrs"
+	}
+	]
+
+-
+	var replyList3 = [
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "1Cevin",
+	posterImage: "assets/img/del/picture.png",
+	comment:
+	"1My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"My comment ghdk snvkx ljskjgfksvk xvfskjfgklgjk " +
+	"dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "2Bob",
+	posterImage: "assets/img/del/photo.jpg",
+	comment:
+	"2My comment",
+	timestamp: "3 hrs"
+	},
+	{
+	name: "2Bob",
+	posterImage: "assets/img/del/photo.jpg",
+	comment:
+	"2My comment",
+	timestamp: "3 hrs"
+	},
+	{
+	name: "3Monica",
+	posterImage: "assets/img/del/photo-2.jpg",
+	comment:
+	"3My commfgbcbgncdgbn lkj lj lkj lkj lkj lkjlk jent  ghdk snvkx  ljskjgfksvk " +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "3Monica",
+	posterImage: "assets/img/del/photo-2.jpg",
+	comment:
+	"3My commfgbcbgncdgbn lkj lj lkj lkj lkj lkjlk jent  ghdk snvkx  ljskjgfksvk " +
+	"xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "2 hrs"
+	},
+	{
+	name: "4Chandler",
+	posterImage: "assets/img/del/photo-3.jpg",
+	comment:
+	"4My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"My comment  ghdk snvkx  ljskjgfksvk xvfskjfgklgjk dfjg kmjskfjsghfsg v kjsk gjs " +
+	"dkghdk snvkx  ljskjgf ksvk xvfskjfgklgjk dfjg kmjskfjsghf",
+	timestamp: "12 hrs"
+	}
+	]
+
+mixin refactor
+	ul.list.dotted.refactor.feedback__refactor <li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Edit</a></li><li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Delete</a></li>
+
+mixin user-feedback
+	.user-feedback.user-reply
+		div.user-feedback__avatar
+			a.user.user-reply__user
+				.photo.user__photo
+					img.image.photo__body.user__photo-body(src="assets/img/del/photo.jpg" alt="")
+				.user__presence.user__presence_active
+		div.user-feedback__body
+			.feedback__header
+				h5.feedback__author-name Anastasiia
+				ul.list.rating.user-feedback__rating
+					li.icon-good.rating__item.user-feedback__rating-item
+					li.icon-good.rating__item.user-feedback__rating-item
+					li.icon-good.rating__item.user-feedback__rating-item
+					li.icon-good.rating__item.user-feedback__rating-item
+					li.icon-good.rating__item.user-feedback__rating-item
+				ul.list.dotted.refactor.feedback__refactor <li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Edit</a></li><li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Delete</a></li>
+			.textarea.user-reply__textarea.user-feedback__textarea
+				textarea.textarea__field(placeholder="Your comment")
+
+mixin user-reply
+	.user-reply
+		i.icon-arrow.user-reply__icon
+		a.user.user-reply__user
+			.photo.user__photo.reply__photo
+				img.image.photo__body.user__photo-body(src="assets/img/del/photo.jpg" alt="")
+			.user__presence.user__presence_active
+		.textarea.user-reply__textarea
+			textarea.textarea__field(placeholder="Your comment")
+
+mixin commentBlock(singleComment)
+	.feedback
+		.feedback__author
+			a.user
+				.photo.user__photo
+					img.image.photo__body.user__photo-body(src=singleComment.posterImage alt="")
+				.user__presence.user__presence_active
+		.feedback__content
+			.feedback__header
+				h5.feedback__author-name= singleComment.name
+				ul.list.rating
+					- for (var x = 0; x < 5; x++)
+						if singleComment.rating > x
+							li.icon-good.rating__item.rating__item_active
+						else
+							li.icon-good.rating__item
+				if !singleComment.replies
+					+refactor
+			p.text.feedback__text=singleComment.comment
+			div.dotted.actions.feedback__actions
+				a.dotted__item.actions__item.link.link-secondary(href="#!") Like
+				a.dotted__item.actions__item.link.link-secondary_important.js_reply(href="#!") Reply
+				span.dotted__item.actions__item.actions__item_timestamp= singleComment.timestamp
+			if singleComment.replies && singleComment.repliesAmount < 4
+				.reply-list.js_reply_list
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_arrow
+						i.icon-arrow.reply-list__icon-arrow.js_icon_arrow
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_amount
+						span=singleComment.repliesAmount
+						| &nbsp;replies
+					div.reply-list__item.reply-list-head__item.reply-list-head__line-wrap
+						div.reply-list-head__line
+					div.reply-list__item.reply-list__item_refactor
+						ul.list.dotted.refactor.feedback__refactor.reply-list__refactor <li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Edit</a></li><li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Delete</a></li>
+					.reply-list__item.reply-list__body
+						for reply in replyList2
+							+commentReply(reply)
+					.reply-list__item.reply-list__timestamp.timestamp
+						span.timestamp__body Last reply 23 hours ago
+						i.icon-arrow-right.timestamp__arrow-right
+			else if singleComment.replies && singleComment.repliesAmount > 4 && singleComment.repliesAmount < 7
+				.reply-list.js_reply_list
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_arrow
+						i.icon-arrow.reply-list__icon-arrow.js_icon_arrow
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_amount
+						span=singleComment.repliesAmount
+						| &nbsp;replies
+					div.reply-list__item.reply-list-head__item.reply-list-head__line-wrap
+						div.reply-list-head__line
+					div.reply-list__item.reply-list__item_refactor
+						ul.list.dotted.refactor.feedback__refactor.reply-list__refactor <li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Edit</a></li><li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Delete</a></li>
+					.reply-list__item.reply-list__body
+						for reply in replyList
+							+commentReply(reply)
+					.reply-list__item.reply-list__timestamp.timestamp
+						span.timestamp__body Last reply 23 hours ago
+						i.icon-arrow-right.timestamp__arrow-right
+			else if singleComment.replies && singleComment.repliesAmount > 7
+				.reply-list.js_reply_list
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_arrow
+						i.icon-arrow.reply-list__icon-arrow.js_icon_arrow
+					div.reply-list__item.reply-list-head__item.reply-list-head__item_amount
+						span=singleComment.repliesAmount
+						| &nbsp;replies
+					div.reply-list__item.reply-list-head__item.reply-list-head__line-wrap
+						div.reply-list-head__line
+					div.reply-list__item.reply-list__item_refactor
+						ul.list.dotted.refactor.feedback__refactor.reply-list__refactor <li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Edit</a></li><li class="dotted__item refactor__item"><a href="#!" class="link link-secondary">Delete</a></li>
+					.reply-list__item.reply-list__body
+						for reply in replyList3
+							+commentReply(reply)
+					.reply-list__item.reply-list__timestamp.timestamp
+						span.timestamp__body Last reply 23 hours ago
+						i.icon-arrow-right.timestamp__arrow-right
+			else if !singleComment.replies
+			.user-reply-wrap
+				+user-reply
+
+mixin commentReply(reply)
+	div.feedback.reply
+		.feedback__author.reply__author
+			a.user.reply__user
+				.photo.user__photo.reply__photo
+					img.image.photo__body.user__photo-body(src=reply.posterImage alt="")
+				.user__presence.user__presence_active
+		div.feedback__content.reply__content
+			h5.feedback__author-name.reply__author-name= reply.name
+			p.text.feedback__text= reply.comment
+			div.dotted.actions
+				a.dotted__item.actions__item.link.link-secondary(href="#!") Like
+				span.dotted__item.actions__item.actions__item_timestamp= reply.timestamp
+
+.l-wrap.page__content
+	.l-row
+		.l-col-xs-12.l-col-xl-7
+			h4.title Your feedback
+			+user-feedback
+			h4.title All feedbacks
+			for singleComment in commentList
+				+commentBlock(singleComment)
+		.l-col-xs-12.l-col-xl-5
+
+
+include modules/html-footer.pug

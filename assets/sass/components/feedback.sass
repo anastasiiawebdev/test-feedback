@@ -1,0 +1,58 @@
+.feedback
+	color: #fff
+	display: flex
+	margin-bottom: 10px
+	&__header
+		display: flex
+		align-items: flex-end
+		padding-bottom: 10px
+	&__author
+		margin-right: 15px
+		&-name
+			font-size: 14px
+			font-weight: 600
+			font-style: normal
+			font-stretch: normal
+			line-height: normal
+			letter-spacing: 0.1px
+	&__refactor
+		margin-left: auto
+		align-self: center
+	&__text
+		font-weight: 300
+		padding-bottom: 15px
+		position: relative
+		z-index: 10
+		background-color: $dark
+	&__actions
+		margin-bottom: 20px
+		position: relative
+		z-index: 10
+		background-color: $dark
+	&__content
+		flex-grow: 1
+		position: relative
+		&.feedback__content_active
+			.rating__item
+				opacity: .5
+				transform: translateX(5px)
+				&:nth-child(2)
+					transition-delay: 0.2s
+				&:nth-child(3)
+					transition-delay: 0.3s
+				&:nth-child(4)
+					transition-delay: 0.4s
+				&:nth-child(5)
+					transition-delay: 0.5s
+				&_active
+					opacity: 1
+			.user-reply
+				opacity: 1
+				transform: translateY(0)
+				&-wrap
+					padding-top: 40px
+					margin-bottom: 30px
+					position: relative
+			.reply-list.thread_opened
+				.refactor
+					display: block

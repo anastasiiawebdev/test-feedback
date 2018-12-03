@@ -1,0 +1,28 @@
+.user-reply
+	align-items: center
+	display: flex
+	position: absolute
+	bottom: -10px
+	left: 0
+	right: 0
+	z-index: 1
+	opacity: 0
+	transform: translateY(-10px)
+	transition-property: transform
+	transition-delay: 0.1s
+	transition-duration: 0.3s
+	&-wrap
+		padding: 0
+		transition-duration: 0.3s
+		position: relative
+		z-index: 1
+		width: 92%
+		margin-left: auto
+		@include r(480)
+			width: 100%
+	&__icon
+		margin-right: 15px
+	&__textarea
+		flex-grow: 1
+	&__user
+		margin-right: 20px

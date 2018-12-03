@@ -1,0 +1,24 @@
+.burger
+	position: relative
+	display: none
+	height: 50px
+	padding: 0 25px
+	background-color: $grey-nobel
+	left: 10px
+	margin: 25px 0
+	cursor: pointer
+	opacity: .5
+	transition: .3s
+	&::before
+		content: '\f197'
+		color: #000
+		font: $font-material
+		font-size: 20px
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&:hover
+		opacity: 1
+	@include r(992)
+		display: inline-block
